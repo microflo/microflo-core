@@ -1,4 +1,4 @@
-#ifdef STELLARIS
+
 class TivaC : public Component {
 public:
     TivaC() : Component(outPorts, TivaCPorts::OutPorts::pf7+1) {}
@@ -14,7 +14,3 @@ public:
 private:
     Connection outPorts[TivaCPorts::OutPorts::pf7+1];
 };
-
-#else
-class TivaC : public DummyComponent { };
-#endif
