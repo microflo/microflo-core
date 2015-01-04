@@ -43,6 +43,7 @@ public:
 #ifdef HAVE_ADAFRUIT_NEOPIXEL
                 neoPixel.show();
 #endif
+                send(Packet(), OutPorts::shown);
             }
         }
     }
