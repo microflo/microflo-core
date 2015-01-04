@@ -5,7 +5,7 @@
 class LedChainNeoPixel : public Component {
 public:
     LedChainNeoPixel()
-        : Component(outPorts, 2)
+        : Component(outPorts, 3)
         , pin(-1)
         , number(-1)
         , initialized(false)

@@ -5,7 +5,7 @@
 class LedChainWS : public Component {
 public:
     LedChainWS()
-        : Component(outPorts, 2)
+        : Component(outPorts, 3)
         , pindata(-1)
         , pinclk(-1)
         , useHardwareSpi(false)
@@ -52,6 +52,7 @@ public:
 #ifdef HAVE_ADAFRUIT_WS2801
                 ws.show();
 #endif
+                send(Packet(), OutPorts::shown);
             }
         }
     }
