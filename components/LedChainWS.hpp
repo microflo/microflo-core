@@ -88,8 +88,8 @@ private:
 #endif
         const MicroFlo::PortId p = OutPorts::pixelset;
         send(Packet(MsgBracketStart), p);
-        send(Packet((long)currentPixelAddress));
-        send(Packet((long)rgb));
+        send(Packet((long)currentPixelAddress), p);
+        send(Packet((long)rgb), p);
         send(Packet(MsgBracketEnd), p);
     }
 
