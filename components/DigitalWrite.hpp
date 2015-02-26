@@ -1,3 +1,18 @@
+/* microflo_component yaml
+name: DigitalWrite
+description: Write a boolean value to pin
+inports:
+  in:
+    type: all
+    description: ""
+  pin:
+    type: all
+    description: ""
+outports:
+  out:
+    type: all
+    description: ""
+microflo_component */
 class DigitalWrite : public SingleOutputComponent {
 public:
     virtual void process(Packet in, MicroFlo::PortId port) {

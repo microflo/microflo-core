@@ -1,3 +1,18 @@
+/* microflo_component yaml
+name: Count
+description: "Count upwards from 0, with step 1"
+inports:
+  in:
+    type: all
+    description: ""
+  reset:
+    type: all
+    description: ""
+outports:
+  out:
+    type: all
+    description: ""
+microflo_component */
 class Count : public SingleOutputComponent {
 public:
     virtual void process(Packet in, MicroFlo::PortId port) {

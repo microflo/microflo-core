@@ -1,3 +1,21 @@
+/* microflo_component yaml
+name: Constrain
+description: "Constraina a number within a the range [@lower,@upper]"
+inports:
+  in:
+    type: all
+    description: ""
+  lower:
+    type: all
+    description: ""
+  upper:
+    type: all
+    description: ""
+outports:
+  out:
+    type: all
+    description: ""
+microflo_component */
 // FIXME: implement Min, Max, Constrain as generics operating on Packet
 class Constrain : public SingleOutputComponent {
 public:

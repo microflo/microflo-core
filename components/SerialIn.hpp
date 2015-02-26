@@ -1,3 +1,15 @@
+/* microflo_component yaml
+name: SerialIn
+description: "Emit packets read from serial port (0). Warning: may interfere with MicroFlo UI usage"
+inports:
+  in:
+    type: all
+    description: ""
+outports:
+  out:
+    type: all
+    description: ""
+microflo_component */
 class SerialIn : public SingleOutputComponent {
 public:
     virtual void process(Packet in, MicroFlo::PortId port) {

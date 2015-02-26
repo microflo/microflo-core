@@ -1,3 +1,21 @@
+/* microflo_component yaml
+name: ReadCapacitivePin
+description: "Emits true if measured capacitance (in iterations) on @pin exceeds @threshold"
+inports:
+  trigger:
+    type: all
+    description: ""
+  pin:
+    type: all
+    description: ""
+  threshold:
+    type: all
+    description: ""
+outports:
+  out:
+    type: all
+    description: ""
+microflo_component */
 #ifdef ARDUINO0
 
 // readCapacitivePin

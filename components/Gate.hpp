@@ -1,3 +1,18 @@
+/* microflo_component yaml
+name: Gate
+description: "Pass packets from @in to @out only if @enable is true"
+inports:
+  in:
+    type: all
+    description: ""
+  enable:
+    type: all
+    description: ""
+outports:
+  out:
+    type: all
+    description: ""
+microflo_component */
 class Gate : public SingleOutputComponent {
 public:
     Gate() : enabled(false), lastInput(MsgInvalid) {}

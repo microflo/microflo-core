@@ -1,3 +1,18 @@
+/* microflo_component yaml
+name: RaspberryPi
+description: Convenient definition of pins available for GPIO on Raspberry PI (rev2)
+inports: {}
+outports:
+  pin3:
+    type: all
+    description: ""
+  pin5:
+    type: all
+    description: ""
+  pin7:
+    type: all
+    description: ""
+microflo_component */
 #ifdef LINUX
 class RaspberryPi : public Component {
 public:

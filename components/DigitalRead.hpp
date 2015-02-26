@@ -1,3 +1,21 @@
+/* microflo_component yaml
+name: DigitalRead
+description: "Read a boolean value from pin. Value is read on @trigger"
+inports:
+  trigger:
+    type: all
+    description: ""
+  pin:
+    type: all
+    description: ""
+  pullup:
+    type: all
+    description: ""
+outports:
+  out:
+    type: all
+    description: ""
+microflo_component */
 class DigitalRead : public SingleOutputComponent {
 public:
     virtual void process(Packet in, MicroFlo::PortId port) {

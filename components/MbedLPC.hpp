@@ -1,3 +1,33 @@
+/* microflo_component yaml
+name: MbedLPC
+description: Convenient definition of pins available on Mbed LPC1768
+inports: {}
+outports:
+  led1:
+    type: all
+    description: ""
+  led2:
+    type: all
+    description: ""
+  led3:
+    type: all
+    description: ""
+  led4:
+    type: all
+    description: ""
+  pin21:
+    type: all
+    description: ""
+  pin22:
+    type: all
+    description: ""
+  pin23:
+    type: all
+    description: ""
+  pin24:
+    type: all
+    description: ""
+microflo_component */
 #ifdef TARGET_LPC1768
 #include <mbed.h>
 #endif

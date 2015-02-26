@@ -1,3 +1,21 @@
+/* microflo_component yaml
+name: HysteresisLatch
+description: "Emit true if @in < @highthreshold, false if @in < @lowthreshold, else keep previous state"
+inports:
+  in:
+    type: all
+    description: ""
+  lowthreshold:
+    type: all
+    description: ""
+  highthreshold:
+    type: all
+    description: ""
+outports:
+  out:
+    type: all
+    description: ""
+microflo_component */
 class HysteresisLatch : public SingleOutputComponent
 {
 public:

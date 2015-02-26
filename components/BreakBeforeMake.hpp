@@ -1,3 +1,24 @@
+/* microflo_component yaml
+name: BreakBeforeMake
+description: Break-before-make switch logic. Monitor ports must be connected to form a feedback loop from what outputs are connected to
+inports:
+  in:
+    type: all
+    description: ""
+  monitor1:
+    type: all
+    description: ""
+  monitor2:
+    type: all
+    description: ""
+outports:
+  out1:
+    type: all
+    description: ""
+  out2:
+    type: all
+    description: ""
+microflo_component */
 // IDEA: ability to express components as finite state machines using a DSL and/or GUI
 class BreakBeforeMake : public Component
 {

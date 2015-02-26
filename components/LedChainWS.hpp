@@ -1,3 +1,36 @@
+/* microflo_component yaml
+name: LedChainWS
+description: Display colors on RGB strips/chains using WS2812 controller
+inports:
+  in:
+    type: all
+    description: ""
+  pindata:
+    type: all
+    description: ""
+  pinclk:
+    type: all
+    description: ""
+  pixels:
+    type: all
+    description: ""
+  show:
+    type: all
+    description: ""
+  hwspi:
+    type: all
+    description: ""
+outports:
+  ready:
+    type: all
+    description: ""
+  pixelset:
+    type: all
+    description: ""
+  shown:
+    type: all
+    description: ""
+microflo_component */
 #ifdef HAVE_ADAFRUIT_WS2801
 #include <Adafruit_WS2801.h>
 #endif

@@ -1,3 +1,27 @@
+/* microflo_component yaml
+name: MapLinear
+description: "Map the integer @in from range [@inmin,@inmax] to [@outmin,@outmax]"
+inports:
+  in:
+    type: all
+    description: ""
+  inmin:
+    type: all
+    description: ""
+  inmax:
+    type: all
+    description: ""
+  outmin:
+    type: all
+    description: ""
+  outmax:
+    type: all
+    description: ""
+outports:
+  out:
+    type: all
+    description: ""
+microflo_component */
 class MapLinear : public SingleOutputComponent {
 public:
     virtual void process(Packet in, MicroFlo::PortId port) {

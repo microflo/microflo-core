@@ -1,3 +1,15 @@
+/* microflo_component yaml
+name: MonitorPin
+description: "Emit a boolean value each time a pin changes state. Note: only pin 2/3 on Arduino Uno/Nano supported."
+inports:
+  pin:
+    type: all
+    description: ""
+outports:
+  out:
+    type: all
+    description: ""
+microflo_component */
 class MonitorPin : public SingleOutputComponent {
 public:
     virtual void process(Packet in, MicroFlo::PortId port) {

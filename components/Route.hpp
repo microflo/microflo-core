@@ -1,3 +1,42 @@
+/* microflo_component yaml
+name: Route
+description: "Pass packets to @out from input port number @port"
+inports:
+  port:
+    type: all
+    description: ""
+  in1:
+    type: all
+    description: ""
+  in2:
+    type: all
+    description: ""
+  in3:
+    type: all
+    description: ""
+  in4:
+    type: all
+    description: ""
+  in5:
+    type: all
+    description: ""
+  in6:
+    type: all
+    description: ""
+  in7:
+    type: all
+    description: ""
+  in8:
+    type: all
+    description: ""
+  in9:
+    type: all
+    description: ""
+outports:
+  out:
+    type: all
+    description: ""
+microflo_component */
 class Route : public SingleOutputComponent {
 
 public:

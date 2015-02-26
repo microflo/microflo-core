@@ -1,3 +1,18 @@
+/* microflo_component yaml
+name: Timer
+description: "Emit a packet every @interval milliseconds"
+inports:
+  interval:
+    type: all
+    description: ""
+  reset:
+    type: all
+    description: ""
+outports:
+  out:
+    type: all
+    description: ""
+microflo_component */
 class Timer : public SingleOutputComponent {
 public:
     virtual void process(Packet in, MicroFlo::PortId port) {

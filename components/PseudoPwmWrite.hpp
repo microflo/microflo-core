@@ -1,3 +1,24 @@
+/* microflo_component yaml
+name: PseudoPwmWrite
+description: "Software PWM. Will be jittery and slow, but can be used on any GPIO pin/platform"
+inports:
+  period:
+    type: all
+    description: ""
+  ontime:
+    type: all
+    description: ""
+  dutycycle:
+    type: all
+    description: ""
+  pin:
+    type: all
+    description: ""
+outports:
+  out:
+    type: all
+    description: ""
+microflo_component */
 class PseudoPwmWrite : public SingleOutputComponent {
 public:
     PseudoPwmWrite()

@@ -1,3 +1,30 @@
+/* microflo_component yaml
+name: LedChainNeoPixel
+description: Display colors on RGB strips/chains using WS2812 controller
+inports:
+  in:
+    type: all
+    description: ""
+  pin:
+    type: all
+    description: ""
+  pixels:
+    type: all
+    description: ""
+  show:
+    type: all
+    description: ""
+outports:
+  ready:
+    type: all
+    description: ""
+  pixelset:
+    type: all
+    description: ""
+  shown:
+    type: all
+    description: ""
+microflo_component */
 #ifdef HAVE_ADAFRUIT_NEOPIXEL
 #include <Adafruit_NeoPixel.h>
 #endif

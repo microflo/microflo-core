@@ -1,3 +1,21 @@
+/* microflo_component yaml
+name: ReadDallasTemperature
+description: "Read temperature from DS1820 thermometer. Note: requires building MicroFlo from source tree."
+inports:
+  trigger:
+    type: all
+    description: ""
+  pin:
+    type: all
+    description: ""
+  address:
+    type: all
+    description: ""
+outports:
+  out:
+    type: all
+    description: ""
+microflo_component */
 #ifdef HAVE_DALLAS_TEMPERATURE
 
 #include <OneWire.h>

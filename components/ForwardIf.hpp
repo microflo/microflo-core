@@ -1,3 +1,15 @@
+/* microflo_component yaml
+name: ForwardIf
+description: "Forward a packet only if it contains a Boolean 'true' value."
+inports:
+  in:
+    type: all
+    description: ""
+outports:
+  out:
+    type: all
+    description: ""
+microflo_component */
 /**
  * Component that only forwards a packet if it contains a Boolean true value.
  */

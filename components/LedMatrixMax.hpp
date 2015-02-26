@@ -1,3 +1,24 @@
+/* microflo_component yaml
+name: LedMatrixMax
+description: Set characters on MAX7219 display
+inports:
+  in:
+    type: all
+    description: ""
+  pincs:
+    type: all
+    description: ""
+  pindin:
+    type: all
+    description: ""
+  pinclk:
+    type: all
+    description: ""
+outports:
+  out:
+    type: all
+    description: ""
+microflo_component */
 
 
 static const unsigned char max7219_characters[38][8]={
