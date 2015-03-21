@@ -1,0 +1,30 @@
+{
+  "name": "microflo-core",
+  "version": "0.3.23",
+  "description": "Core components for MicroFlo",
+  "keywords": [
+    "microflo",
+    "fbp"
+  ],
+  "author": "Jon Nordby <jononor@gmail.com> (http://www.jonnor.com)",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/microflo/microflo-core.git"
+  },
+  "bugs": "http://github.com/microflo/microflo-core/issues",
+  "homepage": "http://microflo.org",
+  "license": "MIT",
+  "files": [
+    "components"
+  ],
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "chai": "~1.8.0",
+    "grunt": "~0.4.1",
+    "mocha": "^1.20.0"
+  }
+}
