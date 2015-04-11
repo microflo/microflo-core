@@ -29,6 +29,7 @@
         "SubGraph",
         "Timer",
         "ToggleBoolean",
+        "ToggleAnimation",
         "BoolToInt"
     ]
 }
