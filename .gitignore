@@ -2,3 +2,5 @@
 node_modules/
 *.includes
 *.config
+*.autosave
+build/
