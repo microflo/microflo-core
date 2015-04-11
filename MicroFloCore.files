@@ -45,3 +45,4 @@ components/ToggleBoolean.hpp
 package.json
 components/ToggleAnimation.hpp
 Gruntfile.coffee
+README.md
