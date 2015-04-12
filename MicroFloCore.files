@@ -46,4 +46,5 @@ package.json
 components/ToggleAnimation.hpp
 Gruntfile.coffee
 README.md
-spec/ToggleAnimation.coffee
+spec/ToggleAnimation.yaml
+spec/ComponentTests.coffee
