@@ -34,6 +34,9 @@ testSubject = (subject, tests) ->
                     # TODO: map back from internal to exported port names
                     [e, node, port, type, data] = arguments
                     onReceived port, type, data
+                else if event == 'ERROR'
+                    args = Array.prototype.slice.call arguments
+                    done new Error args.join ', '
             simulator.device.open (err) ->
                 chai.expect(err).to.not.exist
                 simulator.uploadFBP prog, (err) ->
