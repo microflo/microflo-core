@@ -30,6 +30,7 @@
         "Timer",
         "ToggleBoolean",
         "ToggleAnimation",
+        "ToggleAnimationsN",
         "BoolToInt"
     ]
 }
