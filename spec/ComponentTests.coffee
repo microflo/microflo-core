@@ -55,7 +55,18 @@ testSubject = (subject, tests) ->
                 it tcase.assert, (done) ->
                     # listen outputs, verify against expected
                     received = {}
+                    bracketed = null
                     onReceived = (port, type, data) ->
+                        # FIXME: move this bracket handling into MicroFlo core somewhere
+                        if bracketed? and type != 'BracketEnd'
+                            bracketed.push data
+                            return
+                        if type == 'BracketStart'
+                            bracketed = []
+                            return
+                        if type == 'BracketEnd'
+                            data = bracketed.slice()
+                            bracketed = null
                         received[port] = data
                         nExpected = Object.keys(tcase.expect).length
                         if Object.keys(received).length == nExpected
