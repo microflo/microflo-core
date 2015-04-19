@@ -39,7 +39,7 @@ class ToggleAnimationsN : public Component {
 public:
     ToggleAnimationsN()
         : Component(outPorts, ToggleAnimationsNPorts::OutPorts::clock+1)
-        , tracks(nullptr)
+        , tracks(0)
         , nTracks(0)
         , targetTrackIndex(0)
         , nextPacketNumber(0)
