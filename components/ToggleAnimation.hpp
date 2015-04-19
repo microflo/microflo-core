@@ -53,8 +53,8 @@ class ToggleAnimation : public Component {
 public:
     ToggleAnimation()
         : Component(outPorts, ToggleAnimationPorts::OutPorts::running+1)
-        , value0(false)
-        , value1(true)
+        , value0((bool)false)
+        , value1((bool)true)
         , dutycycle(50)
         , start(0)
         , duration(0)
