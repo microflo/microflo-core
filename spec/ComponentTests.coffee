@@ -27,7 +27,8 @@ testSubject = (subject, tests) ->
             onReceived = (port, type, data) ->
                 throw new Error 'onReceived not set'
             simulator.library.definition = comps
-            simulator.start 0 # no time increments
+            #simulator.start 0 # no time increments
+            simulator.start 1 # normal time
             simulator.device.on 'response', () ->
                 event = arguments[0]
                 if event == 'SEND'
@@ -37,6 +38,10 @@ testSubject = (subject, tests) ->
                 else if event == 'ERROR'
                     args = Array.prototype.slice.call arguments
                     done new Error args.join ', '
+                else if event == 'DEBUG'
+                    console.log event, arguments[1], arguments[2]
+                else if event == 'DEBUGLEVEL'
+                    console.log event, arguments[1]
             simulator.device.open (err) ->
                 chai.expect(err).to.not.exist
                 simulator.uploadFBP prog, (err) ->
@@ -53,6 +58,7 @@ testSubject = (subject, tests) ->
         tests.cases.forEach (tcase) ->
             describe tcase.name, ->
                 it tcase.assert, (done) ->
+                    @timeout 4000
                     # listen outputs, verify against expected
                     received = {}
                     bracketed = null
