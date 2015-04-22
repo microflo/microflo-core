@@ -23,4 +23,4 @@ script:
 - export EMCC_FAST_COMPILER=0
 - export EMCC_DEBUG=1
 - emcc
-- grunt test
+- DEBUG=fbp-spec* grunt test
