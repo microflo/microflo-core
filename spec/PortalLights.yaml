@@ -1,4 +1,5 @@
 name: "PortalLights"
+topic: ToggleAnimationsN
 fixture:
  type: 'fbp'
  data: |
@@ -22,7 +23,7 @@ fixture:
 cases:
 -
   name: '1 active track'
-  assert: 'should call shown'
+  assertion: 'should call shown'
   inputs:
     animation: [
       0, # track idx

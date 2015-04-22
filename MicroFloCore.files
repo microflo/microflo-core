@@ -47,8 +47,8 @@ components/ToggleAnimation.hpp
 Gruntfile.coffee
 README.md
 spec/ToggleAnimation.yaml
-spec/ComponentTests.coffee
 components/ToggleAnimationsN.hpp
 spec/ToggleAnimationsN.yaml
 components/PortalLights.hpp
 spec/PortalLights.yaml
+spec/ComponentTests.coffee

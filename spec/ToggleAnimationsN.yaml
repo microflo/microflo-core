@@ -1,4 +1,4 @@
-name: "ToggleAnimation"
+topic: ToggleAnimationsN
 fixture:
  type: 'fbp'
  data: |
@@ -16,14 +16,14 @@ fixture:
 cases:
 -
   name: 'no tracks setup'
-  assert: 'should repeat clock'
+  assertion: 'should repeat clock'
   inputs:
     clock: 100
   expect:
     clock: 100
 -
   name: '50 tracks setup'
-  assert: 'should repeat clock'
+  assertion: 'should repeat clock'
   inputs:
     tracks: 50
     clock: 1050
@@ -31,7 +31,7 @@ cases:
     clock: 1050
 -
   name: '1 active track toggled low'
-  assert: 'should give value0 color'
+  assertion: 'should give value0 color'
   inputs:
     tracks: 1
     animation: [
@@ -48,7 +48,7 @@ cases:
     value: [0, 0x00EE] # FIXME: truncated
 -
   name: '1 active track toggled high'
-  assert: 'should give value1 color'
+  assertion: 'should give value1 color'
   inputs:
     tracks: 1
     animation: [

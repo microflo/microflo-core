@@ -1,4 +1,4 @@
-name: "ToggleAnimation"
+topic: ToggleAnimation
 fixture:
  type: 'fbp'
  data: |
@@ -20,7 +20,7 @@ fixture:
 cases:
 -
   name: 'no animation setup'
-  assert: 'should give false'
+  assertion: 'should give false'
   inputs:
     clock: 100
   expect:
@@ -28,7 +28,7 @@ cases:
     running: false
 -
   name: 'in first period high'
-  assert: 'should give true'
+  assertion: 'should give true'
   inputs:
     start: 1000
     duration: 200
@@ -39,7 +39,7 @@ cases:
     running: true
 -
   name: 'in first period low'
-  assert: 'should give false'
+  assertion: 'should give false'
   inputs:
     start: 1000
     duration: 400
@@ -50,7 +50,7 @@ cases:
     running: true
 -
   name: 'before animation start'
-  assert: 'should give false'
+  assertion: 'should give false'
   inputs:
     start: 100
     duration: 100
@@ -60,7 +60,7 @@ cases:
     running: false
 -
   name: 'after animation end'
-  assert: 'should give false'
+  assertion: 'should give false'
   inputs:
     start: 101
     duration: 200
