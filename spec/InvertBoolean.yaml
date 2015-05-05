@@ -1,0 +1,40 @@
+topic: InvertBoolean
+fixture:
+ type: 'fbp'
+ data: |
+  # @runtime microflo
+
+  INPORT=it.IN:IN
+  OUTPORT=it.OUT:OUT
+
+  it(InvertBoolean) OUT -> IN v(Forward)
+
+cases:
+-
+  name: 'sending false'
+  assertion: 'should return true'
+  inputs:
+    in: false
+  expect:
+    out: true
+-
+  name: 'sending true'
+  assertion: 'should return false'
+  inputs:
+    in: true
+  expect:
+    out: false
+-
+  name: 'sending 0'
+  assertion: 'should return true'
+  inputs:
+    in: 0
+  expect:
+    out: true
+-
+  name: 'sending 1'
+  assertion: 'should return false'
+  inputs:
+    in: 1
+  expect:
+    out: false

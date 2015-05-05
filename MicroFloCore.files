@@ -54,3 +54,4 @@ spec/PortalLights.yaml
 spec/ComponentTests.coffee
 spec/HysteresisLatch.yaml
 spec/Forward.yaml
+spec/InvertBoolean.yaml
