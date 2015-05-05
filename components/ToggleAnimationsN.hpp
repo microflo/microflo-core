@@ -50,7 +50,7 @@ public:
         using namespace ToggleAnimationsNPorts;
 
         if (port == InPorts::tracks) {
-            if (in.asInteger() > 255) {
+            if (in.asInteger() > MAX_TRACKS) {
                 return;
             }
             reinitializeTracks(in.asInteger());
