@@ -1,0 +1,96 @@
+topic: Forward
+# TODO: don't use a test graph, let fbp-spec set it up based on topic
+fixture:
+ type: 'fbp'
+ data: |
+  # @runtime microflo
+
+  INPORT=it.IN:IN
+  OUTPORT=it.OUT:OUT
+
+  it(Forward) OUT -> IN v(Forward)
+
+# TODO: support testcase generators in fbp-spec?
+# generator would be defined as a JS/CS function, the testcase data a list of objects
+# generator would run for each item, producing a testcase
+cases:
+-
+  name: 'boolean true'
+  assertion: 'should be identical'
+  inputs:
+    in: true
+  expect:
+    out: true
+-
+  name: 'boolean false'
+  assertion: 'should be identical'
+  inputs:
+    in: false
+  expect:
+    out: false
+-
+  name: 'positive integer'
+  assertion: 'should be identical'
+  inputs:
+    in: 10
+  expect:
+    out: 10
+-
+  name: 'negative integer'
+  assertion: 'should be identical'
+  inputs:
+    in: -10
+  expect:
+    out: -10
+-
+  name: 'positive float'
+  assertion: 'should be identical'
+  skip: 'currently truncates'
+  inputs:
+    in: 9.9
+  expect:
+    out: 9.9
+-
+  name: 'negative float'
+  assertion: 'should be identical'
+  skip: 'currently truncates'
+  inputs:
+    in: -7.7
+  expect:
+    out: -7.7
+-
+  name: 'bang (null)'
+  assertion: 'should be identical'
+  skip: 'currently failing'
+  inputs:
+    in: null
+  expect:
+    out: null
+-
+  name: 'byte'
+  assertion: 'should be identical'
+  inputs:
+    in: 0x44
+  expect:
+    out: 0x44
+-
+  name: 'byte in string'
+  assertion: 'should be identical'
+  inputs:
+    in: "0x44"
+  expect:
+    out: 0x44
+-
+  name: 'brackets only'
+  assertion: 'should be identical'
+  inputs:
+    in: []
+  expect:
+    out: []
+-
+  name: 'bracketed numbers'
+  assertion: 'should be identical'
+  inputs:
+    in: [ 0, -100, 100 ]
+  expect:
+    out: [ 0, -100, 100 ]
