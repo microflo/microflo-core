@@ -36,6 +36,22 @@ cases:
   expect:
     out: 10
 -
+  name: 'large integer (16bit unsigned)'
+  assertion: 'should be identical'
+  skip: 'currently inverts?'
+  inputs:
+    in: 0xFFEE
+  expect:
+    out: 0xFFEE
+-
+  name: 'huge integer (32bit unsigned)'
+  assertion: 'should be identical'
+  skip: 'currently causes timeout'
+  inputs:
+    in: 0xFFEEDDCC
+  expect:
+    out: 0xFFEEDDCC
+-
   name: 'negative integer'
   assertion: 'should be identical'
   inputs:
