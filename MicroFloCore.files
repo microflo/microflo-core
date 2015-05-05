@@ -52,3 +52,4 @@ spec/ToggleAnimationsN.yaml
 components/PortalLights.hpp
 spec/PortalLights.yaml
 spec/ComponentTests.coffee
+spec/HysteresisLatch.yaml
