@@ -1,5 +1,6 @@
 name: "PortalLights"
 topic: ToggleAnimationsN
+skip: 'causes wierd virtual function error in core/Forward'
 fixture:
  type: 'fbp'
  data: |
