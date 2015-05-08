@@ -55,3 +55,4 @@ spec/ComponentTests.coffee
 spec/HysteresisLatch.yaml
 spec/Forward.yaml
 spec/InvertBoolean.yaml
+components/UltrasoundSR04.hpp
