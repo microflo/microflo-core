@@ -26,15 +26,20 @@ microflo_component */
 #include <NewPing.h>
 
 
-void echoCheck() {
-    // If ping received, set the sensor distance to array.
-    if (ping.check_timer()) {
-        const long distance = ping.ping_result / US_ROUNDTRIP_CM;
-        // TODO: send on component outport as packet
-    }
-}
 
 class UltrasoundSR04 : public SingleOutputComponent {
+
+public:
+    static void echoCheck(NewPing *ping) {
+        // If ping received, set the sensor distance to array.
+        if (ping->check_timer()) {
+            const long distance = ping->ping_result / US_ROUNDTRIP_CM;
+            UltrasoundSR04 *component = (UltrasoundSR04 *)ping->user_data;
+            if (component) {
+                component->sendDistance(distance);
+            }
+        }
+    }
 
 public:
     UltrasoundSR04()
@@ -50,8 +55,8 @@ public:
 
         if (port == InPorts::trigger) {
             ping.timer_stop(); // assurance
-            ping.ping_timer(echoCheck);
-            send(true, OutPorts::triggered);
+            ping.ping_timer(echoCheck); // setup callback
+            send((bool)true, OutPorts::triggered);
         } else if (port == InPorts::trigpin && in.isNumber()) {
             trigPin = in.asInteger();
             checkInitialize();
@@ -59,6 +64,11 @@ public:
             echoPin = in.asInteger();
             checkInitialize();
         }
+    }
+
+    void sendDistance(long distance) {
+        using namespace UltrasoundSR04Ports;
+        send(distance, OutPorts::distance);
     }
 private:
     inline const bool pinsValid() {
@@ -69,7 +79,8 @@ private:
         if (!pinsValid()) {
             return;
         }
-        ping = NewPing(echoPin, trigPin, MAX_DISTANCE);
+        ping = NewPing(echoPin, trigPin, maxDistance);
+        ping.user_data = (void *)this;
     }
 
 private:
