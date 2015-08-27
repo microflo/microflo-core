@@ -36,7 +36,7 @@ cases:
   name: 'in low state, input between thresholds'
   assertion: 'should remain low'
   inputs:
-    - { low: 10, high: 20, in: 5 },
+    - { low: 10, high: 20, in: 5 }
     - { in: 15 }
   expect:
     - out:
