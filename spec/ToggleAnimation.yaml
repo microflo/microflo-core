@@ -24,8 +24,10 @@ cases:
   inputs:
     clock: 100
   expect:
-    value: false
-    running: false
+    value:
+     equals: false
+    running:
+     equals: false
 -
   name: 'in first period high'
   assertion: 'should give true'
@@ -35,8 +37,10 @@ cases:
     period: 200
     clock: 1050
   expect:
-    value: true
-    running: true
+    value:
+     equals: true
+    running:
+     equals: true
 -
   name: 'in first period low'
   assertion: 'should give false'
@@ -46,8 +50,10 @@ cases:
     period: 200
     clock: 1150
   expect:
-    value: false
-    running: true
+    value:
+     equals: false
+    running:
+     equals: true
 -
   name: 'before animation start'
   assertion: 'should give false'
@@ -56,8 +62,10 @@ cases:
     duration: 100
     clock: 99
   expect:
-    value: false
-    running: false
+    value:
+     equals: false
+    running:
+     equals: false
 -
   name: 'after animation end'
   assertion: 'should give false'
@@ -66,6 +74,8 @@ cases:
     duration: 200
     clock: 302
   expect:
-    value: false
-    running: false
+    value:
+     equals: false
+    running:
+     equals: false
 

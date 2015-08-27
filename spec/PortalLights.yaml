@@ -35,4 +35,5 @@ cases:
       0, # offset
       1000 ] # duration
   expect:
-    shown: null
+    shown:
+     equals: null

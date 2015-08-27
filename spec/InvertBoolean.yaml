@@ -16,25 +16,29 @@ cases:
   inputs:
     in: false
   expect:
-    out: true
+    out:
+     equals: true
 -
   name: 'sending true'
   assertion: 'should return false'
   inputs:
     in: true
   expect:
-    out: false
+    out:
+     equals: false
 -
   name: 'sending 0'
   assertion: 'should return true'
   inputs:
     in: 0
   expect:
-    out: true
+    out:
+     equals: true
 -
   name: 'sending 1'
   assertion: 'should return false'
   inputs:
     in: 1
   expect:
-    out: false
+    out:
+     equals: false

@@ -20,7 +20,8 @@ cases:
   inputs:
     clock: 100
   expect:
-    clock: 100
+    clock:
+     equals: 100
 -
   name: '50 tracks setup'
   assertion: 'should repeat clock'
@@ -28,7 +29,8 @@ cases:
     tracks: 50
     clock: 1050
   expect:
-    clock: 1050
+    clock:
+     equals: 1050
 -
   name: '1 active track toggled low'
   assertion: 'should give value0 color'
@@ -44,8 +46,10 @@ cases:
       500 ] # duration
     clock: 110
   expect:
-    clock: 110
-    value: [0, 0x00EE] # FIXME: truncated
+    clock:
+     equals: 110
+    value:
+     equals: [0, 0x00EE] # FIXME: truncated
 -
   name: '1 active track toggled high'
   assertion: 'should give value1 color'
@@ -61,8 +65,10 @@ cases:
       500 ] # duration
     clock: 250
   expect:
-    clock: 250
-    value: [0, 0x00AA] # FIXME: truncated
+    clock:
+     equals: 250
+    value:
+     equals: [0, 0x00AA] # FIXME: truncated
 
 
 

@@ -20,21 +20,24 @@ cases:
   inputs:
     in: true
   expect:
-    out: true
+    out:
+     equals: true
 -
   name: 'boolean false'
   assertion: 'should be identical'
   inputs:
     in: false
   expect:
-    out: false
+    out:
+     equals: false
 -
   name: 'positive integer'
   assertion: 'should be identical'
   inputs:
     in: 10
   expect:
-    out: 10
+    out:
+     equals: 10
 -
   name: 'large integer (16bit unsigned)'
   assertion: 'should be identical'
@@ -42,7 +45,8 @@ cases:
   inputs:
     in: 0xFFEE
   expect:
-    out: 0xFFEE
+    out:
+     equals: 0xFFEE
 -
   name: 'huge integer (32bit unsigned)'
   assertion: 'should be identical'
@@ -50,14 +54,16 @@ cases:
   inputs:
     in: 0xFFEEDDCC
   expect:
-    out: 0xFFEEDDCC
+    out:
+     equals: 0xFFEEDDCC
 -
   name: 'negative integer'
   assertion: 'should be identical'
   inputs:
     in: -10
   expect:
-    out: -10
+    out:
+     equals: -10
 -
   name: 'positive float'
   assertion: 'should be identical'
@@ -65,7 +71,8 @@ cases:
   inputs:
     in: 9.9
   expect:
-    out: 9.9
+    out:
+     equals: 9.9
 -
   name: 'negative float'
   assertion: 'should be identical'
@@ -73,7 +80,8 @@ cases:
   inputs:
     in: -7.7
   expect:
-    out: -7.7
+    out:
+     equals: -7.7
 -
   name: 'bang (null)'
   assertion: 'should be identical'
@@ -81,32 +89,37 @@ cases:
   inputs:
     in: null
   expect:
-    out: null
+    out:
+     equals: null
 -
   name: 'byte'
   assertion: 'should be identical'
   inputs:
     in: 0x44
   expect:
-    out: 0x44
+    out:
+     equals: 0x44
 -
   name: 'byte in string'
   assertion: 'should be identical'
   inputs:
     in: "0x44"
   expect:
-    out: 0x44
+    out:
+     equals: 0x44
 -
   name: 'brackets only'
   assertion: 'should be identical'
   inputs:
     in: []
   expect:
-    out: []
+    out:
+     equals: []
 -
   name: 'bracketed numbers'
   assertion: 'should be identical'
   inputs:
     in: [ 0, -100, 100 ]
   expect:
-    out: [ 0, -100, 100 ]
+    out:
+     equals: [ 0, -100, 100 ]
