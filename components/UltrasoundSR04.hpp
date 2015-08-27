@@ -28,29 +28,32 @@ microflo_component */
 #endif
 
 
-class UltrasoundSR04 : public SingleOutputComponent {
+class UltrasoundSR04 : public Component {
 
 public:
 #ifdef ARDUINO
     static void echoCheck(NewPing *ping) {
+        if (!ping || !ping->user_data) {
+            return;
+        }
         // If ping received, set the sensor distance to array.
         if (ping->check_timer()) {
+            ping->timer_stop(); // avoid new interrupts until retriggered
             const long distance = ping->ping_result / US_ROUNDTRIP_CM;
             UltrasoundSR04 *component = (UltrasoundSR04 *)ping->user_data;
-            if (component) {
-                component->sendDistance(distance);
-            }
+            component->sendDistance(distance);
         }
     }
 #endif
 
 public:
     UltrasoundSR04()
-        : echoPin(-1)
+        : Component(outPorts, UltrasoundSR04Ports::OutPorts::distance+1)
+        , echoPin(-1)
         , trigPin(-1)
         , maxDistance(200)
 #ifdef ARDUINO
-        , ping(-1, -1, maxDistance)
+        , ping(trigPin, echoPin, maxDistance)
 #endif
     {
     }
@@ -59,8 +62,10 @@ public:
         using namespace UltrasoundSR04Ports;
 
         if (port == InPorts::trigger) {
+            if (!pinsValid()) {
+                return;
+            }
 #ifdef ARDUINO
-            ping.timer_stop(); // assurance
             ping.ping_timer(echoCheck); // setup callback
 #endif
             send((bool)true, OutPorts::triggered);
@@ -82,14 +87,15 @@ private:
         return (echoPin > 0 && trigPin > 0);
     }
 
-    void checkInitialize() {
+    bool checkInitialize() {
         if (!pinsValid()) {
-            return;
+            return false;
         }
 #ifdef ARDUINO
-        ping = NewPing(echoPin, trigPin, maxDistance);
+        ping = NewPing(trigPin, echoPin, maxDistance);
         ping.user_data = (void *)this;
 #endif
+        return true;
     }
 
 private:
@@ -99,4 +105,5 @@ private:
     NewPing ping;
 #endif
     long maxDistance;
+    Connection outPorts[UltrasoundSR04Ports::OutPorts::distance+1];
 };
