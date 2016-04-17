@@ -6,7 +6,7 @@ fixture:
   # @runtime microflo
 
   INPORT=it.IN:IN
-  OUTPORT=it.OUT:OUT
+  OUTPORT=v.OUT:OUT
 
   it(Forward) OUT -> IN v(Forward)
 
