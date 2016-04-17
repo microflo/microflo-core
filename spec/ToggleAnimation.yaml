@@ -1,22 +1,4 @@
 topic: ToggleAnimation
-fixture:
- type: 'fbp'
- data: |
-  # @runtime microflo
-
-  INPORT=it.CLOCK:CLOCK
-  INPORT=it.VALUE0:VALUE0
-  INPORT=it.VALUE1:VALUE1
-  INPORT=it.START:START
-  INPORT=it.PERIOD:PERIOD
-  INPORT=it.DURATION:DURATION
-  INPORT=it.DUTYCYCLE:DUTYCYCLE
-  OUTPORT=it.RUNNING:RUNNING
-  OUTPORT=it.VALUE:VALUE
-
-  it(ToggleAnimation) VALUE -> IN v(Forward)
-  it RUNNING -> IN r(Forward)
-
 cases:
 -
   name: 'no animation setup'

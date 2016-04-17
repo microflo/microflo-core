@@ -1,14 +1,4 @@
 topic: InvertBoolean
-fixture:
- type: 'fbp'
- data: |
-  # @runtime microflo
-
-  INPORT=it.IN:IN
-  OUTPORT=it.OUT:OUT
-
-  it(InvertBoolean) OUT -> IN v(Forward)
-
 cases:
 -
   name: 'sending false'
