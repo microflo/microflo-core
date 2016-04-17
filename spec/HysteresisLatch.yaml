@@ -1,23 +1,11 @@
 topic: HysteresisLatch
-fixture:
- type: 'fbp'
- data: |
-  # @runtime microflo
-
-  INPORT=it.IN:IN
-  INPORT=it.HIGHTHRESHOLD:HIGH
-  INPORT=it.LOWTHRESHOLD:LOW
-  OUTPORT=it.OUT:OUT
-
-  it(HysteresisLatch) OUT -> IN v(Forward)
-
 cases:
 -
   name: 'input above high threshold'
   assertion: 'should go high'
   inputs:
-    low: 10
-    high: 20
+    lowthreshold: 10
+    highthreshold: 20
     in: 30
   expect:
     out:
@@ -26,8 +14,8 @@ cases:
   name: 'input below low threshold'
   assertion: 'should go low'
   inputs:
-    low: 10
-    high: 20
+    lowthreshold: 10
+    highthreshold: 20
     in: 5
   expect:
     out:
@@ -36,7 +24,7 @@ cases:
   name: 'in low state, input between thresholds'
   assertion: 'should remain low'
   inputs:
-    - { low: 10, high: 20, in: 5 }
+    - { lowthreshold: 10, highthreshold: 20, in: 5 }
     - { in: 15 }
   expect:
     - out:
@@ -48,7 +36,7 @@ cases:
   name: 'in high state, input between thresholds'
   assertion: 'should remain high'
   inputs:
-    - { low: 10, high: 20, in: 30 }
+    - { lowthreshold: 10, highthreshold: 20, in: 30 }
     - { in: 15 }
   expect:
     - out:
