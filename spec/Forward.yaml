@@ -1,18 +1,4 @@
 topic: Forward
-# TODO: don't use a test graph, let fbp-spec set it up based on topic
-fixture:
- type: 'fbp'
- data: |
-  # @runtime microflo
-
-  INPORT=it.IN:IN
-  OUTPORT=v.OUT:OUT
-
-  it(Forward) OUT -> IN v(Forward)
-
-# TODO: support testcase generators in fbp-spec?
-# generator would be defined as a JS/CS function, the testcase data a list of objects
-# generator would run for each item, producing a testcase
 cases:
 -
   name: 'boolean true'
