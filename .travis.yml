@@ -24,3 +24,11 @@ script:
 - export EMCC_DEBUG=1
 - emcc
 - grunt test
+deploy:
+  provider: npm
+  email: jononor@gmail.com
+  api_key:
+    secure: fzDp9lzgUjTIZUfPJDzSLWxEpJKmll+CFY306rK1iWydcyrXGjRoX2ZNR4vI/P8LFacyWpy1Hcsw+x7GyAtIAXhvKc99nmmWqp+iyQ2ZLvoBhkf7BYE4H2xkQe9h410g7L7JqvahsrBY+Dkarg3joAlEkmM9ApR89rzNUaFIADI=
+  on:
+    tags: true
+    repo: microflo/microflo-core
