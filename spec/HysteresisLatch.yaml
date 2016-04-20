@@ -27,11 +27,12 @@ cases:
     - { lowthreshold: 10, highthreshold: 20, in: 5 }
     - { in: 15 }
   expect:
-    - out:
-      equals: false
-    - out:
-      equals: false
-  skip: 'needs multiple inputs support in fbp-spec'
+    -
+     out:
+        equals: false
+    -
+     out:
+        equals: false
 -
   name: 'in high state, input between thresholds'
   assertion: 'should remain high'
@@ -40,7 +41,6 @@ cases:
     - { in: 15 }
   expect:
     - out:
-      equals: false
+        equals: true
     - out:
-      equals: false
-  skip: 'needs multiple inputs support in fbp-spec'
+        equals: true
