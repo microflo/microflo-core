@@ -35,5 +35,5 @@ public:
     }
 private:
     bool startBracketRecieved;
-    char delimiter;
+    unsigned char delimiter;
 };
