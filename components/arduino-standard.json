@@ -30,7 +30,6 @@
         "Timer",
         "ToggleBoolean",
         "ToggleAnimation",
-        "ToggleAnimationsN",
         "LedChainNeoPixel",
         "UltrasoundSR04",
         "BoolToInt"
