@@ -2,7 +2,6 @@
     "components": [
         "DigitalWrite",
         "Forward",
-        "SubGraph",
         "ToggleBoolean",
         "Timer"
     ]

@@ -27,7 +27,6 @@
         "SerialIn",
         "SerialOut",
         "Split",
-        "SubGraph",
         "Timer",
         "ToggleBoolean",
         "BoolToInt"
