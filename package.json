@@ -33,6 +33,7 @@
     "grunt-exec": "^0.4.6",
     "grunt-mocha-test": "^0.12.7",
     "microflo": "^0.3.33",
+    "microflo-emscripten": "^0.3.36",
     "mocha": "^1.20.0"
   }
 }

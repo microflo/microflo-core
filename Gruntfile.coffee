@@ -1,7 +1,7 @@
 
 microflo = (target) ->
     build = [
-        "make -f ./node_modules/microflo/Makefile"
+        "make -f ./node_modules/microflo-emscripten/Makefile"
         target
         "BUILD_DIR=build"
         "MICROFLO=./node_modules/.bin/microflo"
