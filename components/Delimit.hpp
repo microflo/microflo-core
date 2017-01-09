@@ -1,3 +1,15 @@
+/* microflo_component yaml
+name: Delimit
+description: ""
+inports:
+  in:
+    type: all
+    description: ""
+outports:
+  out:
+    type: all
+    description: ""
+microflo_component */
 class Delimit : public SingleOutputComponent {
 public:
     Delimit(): startBracketRecieved(false) {}
