@@ -7,7 +7,8 @@ microflo = (target) ->
         "MICROFLO=./node_modules/.bin/microflo"
         "GRAPH=graph.fbp"
         "MICROFLO_SOURCE_DIR=`pwd`/node_modules/microflo/microflo"
-        "LIBRARY=`pwd`/components/arduino-standard.json"
+        "PROJECT_DIR=`pwd`/node_modules/microflo-emscripten"
+        "LIBRARYOPTION='--library `pwd`/components/arduino-standard.json'"
     ]
     return build.join ' '
 
