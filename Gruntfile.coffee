@@ -3,12 +3,12 @@ microflo = (target) ->
     build = [
         "make -f ./node_modules/microflo-emscripten/Makefile"
         target
-        "BUILD_DIR=build"
+        "BUILD_DIR=build/emscripten"
         "MICROFLO=./node_modules/.bin/microflo"
         "GRAPH=graph.fbp"
         "MICROFLO_SOURCE_DIR=`pwd`/node_modules/microflo/microflo"
         "PROJECT_DIR=`pwd`/node_modules/microflo-emscripten"
-        "LIBRARYOPTION='--library `pwd`/components/arduino-standard.json'"
+        "LIBRARY=`pwd`/components/arduino-standard.json"
     ]
     return build.join ' '
 
