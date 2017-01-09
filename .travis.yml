@@ -18,6 +18,7 @@ script:
 - emcc
 - grunt test
 deploy:
+  skip_cleanup: true
   provider: npm
   email: jononor@gmail.com
   api_key:

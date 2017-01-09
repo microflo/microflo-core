@@ -32,6 +32,7 @@ module.exports = ->
 
     exec:
         microflo_emscripten: microflo "build-emscripten"
+        update_components: "make components"
 
     mochaTest:
       nodejs:
@@ -49,6 +50,7 @@ module.exports = ->
 
   # Our local tasks
   @registerTask 'build', [
+    'exec:update_components'
     'exec:microflo_emscripten'
   ]
 
