@@ -16,8 +16,8 @@ outports:
     type: all
     description: ""
 microflo_component */
-#ifdef ARDUINO0
 
+#ifdef __AVR__
 // readCapacitivePin
 //  Input: Arduino pin number
 //  Output: A number, from 0 to 17 expressing
@@ -82,6 +82,13 @@ uint8_t readCapacitivePin(int pinToMeasure) {
   return cycles;
 }
 
+#else
+#warning "ReadCapacitivePin support compiled out"
+uint8_t readCapacitivePin(int pinToMeasure) {
+    return 255;
+}
+#endif
+
 class ReadCapacitivePin : public SingleOutputComponent {
 public:
     virtual void process(Packet in, MicroFlo::PortId port) {
@@ -112,8 +119,3 @@ private:
     int pin;
     int touchedThreshold;
 };
-
-
-#else
-class ReadCapacitivePin : public DummyComponent {};
-#endif
