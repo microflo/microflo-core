@@ -1,17 +1,4 @@
 
-microflo = (target) ->
-    build = [
-        "make -f ./node_modules/microflo-emscripten/Makefile"
-        target
-        "BUILD_DIR=build/emscripten"
-        "MICROFLO=./node_modules/.bin/microflo"
-        "GRAPH=graph.fbp"
-        "MICROFLO_SOURCE_DIR=`pwd`/node_modules/microflo/microflo"
-        "PROJECT_DIR=`pwd`/node_modules/microflo-emscripten"
-        "LIBRARY=`pwd`/components/arduino-standard.json"
-    ]
-    return build.join ' '
-
 module.exports = ->
   # Project configuration
   @initConfig
@@ -28,10 +15,8 @@ module.exports = ->
           no_trailing_semicolons:
             level: 'warn'
 
-    # TODO: Browser build
-
     exec:
-        microflo_emscripten: microflo "build-emscripten"
+        build_runtime: "make runtime"
         update_components: "make components"
 
     mochaTest:
@@ -51,7 +36,7 @@ module.exports = ->
   # Our local tasks
   @registerTask 'build', [
     'exec:update_components'
-    'exec:microflo_emscripten'
+    'exec:build_runtime'
   ]
 
   @registerTask 'test', [
