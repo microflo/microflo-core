@@ -28,6 +28,7 @@
         "Split",
         "Timer",
         "ToggleBoolean",
+        "ToggleAnimation",
         "BoolToInt"
     ]
 }

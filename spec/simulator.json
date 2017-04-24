@@ -6,5 +6,5 @@
   "address": "ws://localhost:3333",
   "secret": "microflo32",
   "id": "2ef763ff-1f28-49b8-b58f-5c6a5c23af2d",
-  "command": "microflo runtime --port 3333 --file build/emscripten/microflo-runtime.js"
+  "command": "sh spec/start-runtime.sh"
 }
