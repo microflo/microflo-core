@@ -133,7 +133,7 @@ private:
     int8_t number;
     bool initialized;
     int currentPixelAddress; // -1 means waiting for pixel index, else waiting for value
-    Connection outPorts[2];
+    Connection outPorts[3];
 #ifdef HAVE_ADAFRUIT_WS2801
     Adafruit_WS2801 ws;
 #endif
