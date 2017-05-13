@@ -2,7 +2,6 @@
     "components": [
         "AnalogRead",
         "MbedLPC",
-        "TivaC",
         "BooleanAnd",
         "BooleanOr",
         "BreakBeforeMake",

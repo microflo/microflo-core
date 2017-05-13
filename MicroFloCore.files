@@ -40,7 +40,6 @@ components/SerialOut.hpp
 components/Split.hpp
 components/SubGraph.hpp
 components/Timer.hpp
-components/TivaC.hpp
 components/ToggleBoolean.hpp
 package.json
 components/ToggleAnimation.hpp
