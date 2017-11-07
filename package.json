@@ -30,7 +30,7 @@
     "fbp-spec": "^0.4.1",
     "grunt": "^1.0.1",
     "grunt-cli": "^1.2.0",
-    "grunt-exec": "^1.0.1",
+    "grunt-exec": "^3.0.0",
     "grunt-mocha-test": "^0.13.2",
     "microflo": "^0.4.0",
     "mocha": "^4.0.0"
