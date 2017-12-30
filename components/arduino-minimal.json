@@ -6,7 +6,6 @@
         "BooleanOr",
         "Constrain",
         "Count",
-        "Delimit",
         "DigitalRead",
         "DigitalWrite",
         "Gate",
