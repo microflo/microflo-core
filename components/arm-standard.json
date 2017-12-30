@@ -20,7 +20,6 @@
         "MonitorPin",
         "NumberEquals",
         "PwmWrite",
-        "ReadCapacitivePin",
         "Route",
         "SerialIn",
         "SerialOut",

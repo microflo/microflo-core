@@ -16,7 +16,6 @@
         "MonitorPin",
         "NumberEquals",
         "PwmWrite",
-        "ReadCapacitivePin",
         "Route",
         "Split",
         "Timer",
