@@ -1,0 +1,39 @@
+topic: MapLinear
+cases:
+-
+  name: 'mapping from input minimum'
+  assertion: 'should become output minimum'
+  inputs:
+    inmin: 0
+    inmax: 100
+    outmin: 50
+    outmax: 200
+    in: 0
+  expect:
+    out:
+     equals: 50
+-
+  name: 'mapping from input maximum'
+  assertion: 'should become output maximum'
+  inputs:
+    inmin: 0
+    inmax: 100
+    outmin: 50
+    outmax: 200
+    in: 100
+  expect:
+    out:
+     equals: 200
+-
+  name: 'mapping a middle value'
+  assertion: 'should become middle of output range'
+  inputs:
+    inmin: 0
+    inmax: 100
+    outmin: 200
+    outmax: 1000
+    in: 50
+  expect:
+    out:
+     equals: 600
+
