@@ -1,0 +1,31 @@
+topic: Count
+cases:
+-
+  name: 'banging 3 times'
+  assertion: 'should give 0,1,2'
+  inputs:
+    - { in: null }
+    - { in: null }
+    - { in: null }
+  expect:
+    - { out: { equals: 0 } }
+    - { out: { equals: 1 } }
+    - { out: { equals: 2 } }
+-
+  name: 'then resetting'
+  assertion: 'should start at 0 again'
+  inputs:
+    - { reset: null }
+    - { in: null }
+  expect:
+    - { out: { equals: 0 } }
+    - { out: { equals: 1 } }
+-
+  name: 'holding reset true'
+  assertion: 'should keep value at 0'
+  inputs:
+    - { reset: true }
+    - { in: null }
+  expect:
+    - { out: { equals: 0 } }
+    - { out: { equals: 0 } }

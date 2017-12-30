@@ -18,20 +18,10 @@ module.exports = ->
     exec:
         build_runtime: "make runtime"
         update_components: "make components"
-
-    mochaTest:
-      nodejs:
-        src: ['spec/*.coffee']
-        options:
-          reporter: 'spec'
-          require: 'coffee-script/register'
-          grep: process.env.TESTS
+        fbpspec: "./node_modules/.bin/fbp-spec --address ws://localhost:3333 --command 'sh spec/start-runtime.sh' --start-timeout 10 spec/"
 
   # Grunt plugins used for building
   @loadNpmTasks 'grunt-exec'
-
-  # Grunt plugins used for testing
-  @loadNpmTasks 'grunt-mocha-test'
 
   # Our local tasks
   @registerTask 'build', [
@@ -39,10 +29,6 @@ module.exports = ->
     'exec:build_runtime'
   ]
 
-  @registerTask 'test', [
-    'build'
-    'mochaTest'
-  ]
-
+  @registerTask 'test', [ 'build', 'exec:fbpspec' ]
   @registerTask 'default', ['test']
 

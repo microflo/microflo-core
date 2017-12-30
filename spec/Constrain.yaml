@@ -1,0 +1,43 @@
+topic: Constrain
+cases:
+-
+  name: 'in below lower'
+  assertion: 'out equals lower'
+  inputs:
+    lower: 10
+    upper: 105
+    in: 9
+  expect:
+    out:
+     equals: 10
+-
+  name: 'in higher than upper'
+  assertion: 'out equals upper'
+  inputs:
+    lower: 0
+    upper: 1000
+    in: 1001
+  expect:
+    out:
+     equals: 1000
+-
+  name: 'positive input between lower and upper'
+  assertion: 'out equals input'
+  inputs:
+    upper: 3003
+    lower: 11
+    in: 222
+  expect:
+    out:
+     equals: 222
+-
+  name: 'negative input between lower and upper'
+  assertion: 'out equals input'
+  skip: 'fails, seems to have with negative lower'
+  inputs:
+    upper: 3004
+    lower: -3004
+    in: -333
+  expect:
+    out:
+     equals: -333

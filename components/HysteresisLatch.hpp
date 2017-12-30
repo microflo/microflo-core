@@ -3,13 +3,13 @@ name: HysteresisLatch
 description: "Emit true if @in < @highthreshold, false if @in < @lowthreshold, else keep previous state"
 inports:
   in:
-    type: all
+    type: number
     description: ""
   lowthreshold:
-    type: all
+    type: number
     description: ""
   highthreshold:
-    type: all
+    type: number
     description: ""
 outports:
   out:
@@ -18,16 +18,24 @@ outports:
 microflo_component */
 class HysteresisLatch : public SingleOutputComponent
 {
+enum State {
+    Unknown,
+    Low,
+    High,
+};
+
 public:
+    HysteresisLatch()
+        : mHighThreshold(0)
+        , mLowThreshold(0)
+        , mCurrentState(Unknown)
+    {
+    }
+
     virtual void process(Packet in, MicroFlo::PortId port) {
         using namespace HysteresisLatchPorts;
 
-        if (in.isSetup()) {
-            // defaults
-            mHighThreshold = 30;
-            mLowThreshold = 24;
-            mCurrentState = true; // TODO: make tristate or configurable?
-        } else if (port == InPorts::lowthreshold && in.isNumber()) {
+        if (port == InPorts::lowthreshold && in.isNumber()) {
             mLowThreshold = in.asFloat();
         } else if (port == InPorts::highthreshold && in.isNumber()) {
             mHighThreshold = in.asFloat();
@@ -38,20 +46,18 @@ public:
 
 private:
     void updateValue(float input) {
-        if (mCurrentState) {
-            if (input <= mLowThreshold) {
-                mCurrentState = false;
-            }
-        } else {
-            if (input >= mHighThreshold) {
-                mCurrentState = true;
-            }
+        if (mCurrentState == Unknown) {
+            mCurrentState = (input >= mLowThreshold) ? High : Low;
+        } else if (mCurrentState == High && input <= mLowThreshold) {
+            mCurrentState = Low;
+        } else if (mCurrentState == Low && input >= mHighThreshold) {
+            mCurrentState = High;
         }
-        send(Packet(mCurrentState));
+        send(Packet(mCurrentState == High));
     }
 
 private:
     float mHighThreshold;
     float mLowThreshold;
-    bool mCurrentState;
+    State mCurrentState;
 };

@@ -3,29 +3,32 @@ name: Count
 description: "Count upwards from 0, with step 1"
 inports:
   in:
-    type: all
+    type: bang
     description: ""
+    triggering: true
   reset:
-    type: all
+    type: bool
     description: ""
+    triggering: true
 outports:
   out:
-    type: all
+    type: integer
     description: ""
 microflo_component */
 class Count : public SingleOutputComponent {
 public:
+    Count()
+        : current(-1)
+        , isReset(false)
+    {}
+
     virtual void process(Packet in, MicroFlo::PortId port) {
         using namespace CountPorts;
-        if (in.isSetup()) {
-            current = 0;
-            isReset = false;
-            send(Packet(current));
-        } else if (port == InPorts::in) {
+        if (port == InPorts::in) {
             if (!isReset) {
                 current += 1;
-                send(Packet(current));
             }
+            send(Packet(current));
         } else if (port == InPorts::reset) {
             if (in.isBool()) {
                 isReset = in.asBool();

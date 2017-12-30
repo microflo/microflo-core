@@ -1,42 +1,44 @@
 /* microflo_component yaml
 name: Constrain
-description: "Constraina a number within a the range [@lower,@upper]"
+description: "Constrain a number to the range [@lower,@upper]"
 inports:
   in:
-    type: all
+    type: integer
     description: ""
+    triggering: true
   lower:
-    type: all
+    type: integer
     description: ""
   upper:
-    type: all
+    type: integer
     description: ""
 outports:
   out:
-    type: all
+    type: integer
     description: ""
 microflo_component */
-// FIXME: implement Min, Max, Constrain as generics operating on Packet
+
 class Constrain : public SingleOutputComponent {
+
 public:
+    Constrain()
+        : lower(0)
+        , upper(0)
+    {}
+
     virtual void process(Packet in, MicroFlo::PortId port) {
         using namespace ConstrainPorts;
-        if (in.isSetup()) {
-            // no defaults
-            lower = 0;
-            upper = 0;
-            input = 0;
-        } else if (port == InPorts::lower && in.isData()) {
+        if (port == InPorts::lower) {
             lower = in.asInteger();
-        } else if (port == InPorts::upper && in.isData()) {
+        } else if (port == InPorts::upper) {
             upper = in.asInteger();
         } else if (port == InPorts::in && in.isNumber()) {
-            input = in.asInteger();
-            send(Packet(this->_constrain()));
+            const auto input = in.asInteger();
+            send(Packet(this->_constrain(input)));
         }
     }
 private:
-    long _constrain() {
+    long _constrain(long input) {
         if (input > upper)
             return upper;
         else if (input < lower)
@@ -46,5 +48,4 @@ private:
     }
     long lower;
     long upper;
-    long input;
 };

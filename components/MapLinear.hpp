@@ -3,19 +3,20 @@ name: MapLinear
 description: "Map the integer @in from range [@inmin,@inmax] to [@outmin,@outmax]"
 inports:
   in:
-    type: all
+    type: integer
     description: ""
+    triggering: true
   inmin:
-    type: all
+    type: integer
     description: ""
   inmax:
-    type: all
+    type: integer
     description: ""
   outmin:
-    type: all
+    type: integer
     description: ""
   outmax:
-    type: all
+    type: integer
     description: ""
 outports:
   out:
@@ -26,15 +27,14 @@ class MapLinear : public SingleOutputComponent {
 public:
     virtual void process(Packet in, MicroFlo::PortId port) {
         using namespace MapLinearPorts;
-        if (in.isSetup()) {
-            // no defaults
-        } else if (port == InPorts::inmin && in.isData()) {
+
+        if (port == InPorts::inmin) {
             inmin = in.asInteger();
-        } else if (port == InPorts::inmax && in.isData()) {
+        } else if (port == InPorts::inmax) {
             inmax = in.asInteger();
-        } else if (port == InPorts::outmin && in.isData()) {
+        } else if (port == InPorts::outmin) {
             outmin = in.asInteger();
-        } else if (port == InPorts::outmax && in.isData()) {
+        } else if (port == InPorts::outmax) {
             outmax = in.asInteger();
         } else if (port == InPorts::in && in.isNumber()) {
             send(Packet(map(in.asInteger())));

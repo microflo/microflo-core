@@ -31,9 +31,7 @@ public:
     virtual void process(Packet in, MicroFlo::PortId port) {
         using namespace ReadDallasTemperaturePorts;
 
-        if (in.isSetup()) {
-            // defaults
-        } else if (port == InPorts::pin && in.isNumber()) {
+        if (port == InPorts::pin && in.isNumber()) {
             updateConfig(in.asInteger(), sensors.getResolution());
         } else if (port == InPorts::address) {
             if (in.isStartBracket()) {
