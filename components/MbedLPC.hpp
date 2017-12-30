@@ -1,7 +1,11 @@
 /* microflo_component yaml
 name: MbedLPC
 description: Convenient definition of pins available on Mbed LPC1768
-inports: {}
+inports:
+  in:
+    type: bang
+    description: ""
+    triggering: true
 outports:
   led1:
     type: all
@@ -39,7 +43,7 @@ public:
     MbedLPC() : Component(outPorts, MbedLPCPorts::OutPorts::pin24+1) {}
     virtual void process(Packet in, MicroFlo::PortId port) {
         using namespace MbedLPCPorts;
-        if (in.isSetup()) {
+        if (port == InPorts::in) {
             send(Packet((long)LED1), OutPorts::led1);
             send(Packet((long)LED2), OutPorts::led2);
             send(Packet((long)LED3), OutPorts::led3);
