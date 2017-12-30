@@ -1,8 +1,30 @@
 
-microflo-core
-=============
+# microflo-core
 
-0.4
-----
+## 0.5.0 - released 30.12.2017
 
-* Split out of microflo
+Breaking changes
+
+* Requires MicroFlo 0.5.0+
+* Removed several unused/not-useful components: `SerialIn`, `SerialOut`, `Delimit`, `ATUSBKEY`, `TivaC`
+* Several components that used to send on network start now has mandatory triggering ports:
+`MbedLPC`, `ArduinoUno`
+
+Internal changes
+
+* Added more type annotations on ports
+* Added more tests
+
+## 0.3.38 - released 10.05.2017
+
+Internal changes
+
+* Using Linux as the primary backend for test, versus Emscripten before
+
+## 0.3.*
+
+## 0.3.23 - released 21.03.2015
+
+First release
+
+* Split out of main `microflo` repository
