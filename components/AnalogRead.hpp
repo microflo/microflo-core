@@ -6,20 +6,19 @@ inports:
     type: all
     description: ""
   pin:
-    type: all
+    type: integer
     description: ""
 outports:
   out:
-    type: all
+    type: integer
     description: ""
 microflo_component */
 class AnalogRead : public SingleOutputComponent {
 public:
     virtual void process(Packet in, MicroFlo::PortId port) {
         using namespace AnalogReadPorts;
-        if (in.isSetup()) {
-            // no defaults
-        } else if (port == InPorts::trigger && in.isData()) {
+
+        if (port == InPorts::trigger) {
             const long val = io->AnalogRead(pin);
             send(Packet(val));
         } else if (port == InPorts::pin && in.isNumber()) {
