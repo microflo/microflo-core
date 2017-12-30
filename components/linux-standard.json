@@ -20,8 +20,6 @@
         "NumberEquals",
         "PwmWrite",
         "Route",
-        "SerialIn",
-        "SerialOut",
         "Split",
         "Timer",
         "ToggleBoolean",
