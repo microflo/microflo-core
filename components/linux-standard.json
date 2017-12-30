@@ -1,7 +1,6 @@
 {
     "components": [
         "AnalogRead",
-        "RaspberryPi",
         "BooleanAnd",
         "BooleanOr",
         "BreakBeforeMake",
