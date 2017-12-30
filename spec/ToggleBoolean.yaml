@@ -1,0 +1,22 @@
+topic: ToggleBoolean
+cases:
+-
+  name: 'sending 3 packets'
+  assertion: 'should give false,true,false'
+  inputs:
+    - in: null
+    - in: true
+    - in: 12
+  expect:
+    - out: { equals: false }
+    - out: { equals: true }
+    - out: { equals: false }
+-
+  name: 'sending reset'
+  assertion: 'should start over gain'
+  inputs:
+    - reset: -122
+    - in: 44.3
+  expect:
+    - out: { equals: false }
+    - out: { equals: true }
