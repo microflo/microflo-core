@@ -1,6 +1,19 @@
 
 # microflo-core
 
+## 0.6.0 - released N/A
+
+Breaking changes
+
+* Components moved to `microflo-arduino`:
+LedChainNeoPixel, LedChainWS, LedMatrixMax, ReadDallasTemperature, UltrasoundSR04, MonitorPin
+* Components moved to `microflo-contrib`:
+ArduinoUno, BreakBeforeMake, MbedLPC, ToggleAnimation, ToggleAnimationsN
+
+Improvements
+
+* All components now specify datatypes on ports 
+
 ## 0.5.0 - released 30.12.2017
 
 Breaking changes
