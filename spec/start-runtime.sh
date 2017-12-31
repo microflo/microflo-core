@@ -7,4 +7,4 @@ trap 'kill $(jobs -p)' EXIT
 
 ./build/tests/runtime $SERIALFILE &
 sleep 2
-./node_modules/.bin/microflo runtime $OPTIONS --componentmap build/tests/componentlib-map.json | grep 'listening'
+./node_modules/.bin/microflo runtime $OPTIONS --componentmap build/tests/runtime.component.map.json
