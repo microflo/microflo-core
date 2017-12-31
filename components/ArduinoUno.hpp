@@ -73,7 +73,7 @@ public:
     virtual void process(Packet in, MicroFlo::PortId port) {
         const MicroFlo::PortId digitalPins = 14;
         const MicroFlo::PortId analogPins = 6;
-        if (port == ArduinoUnoPorts::InPorts:in) {
+        if (port == ArduinoUnoPorts::InPorts::in) {
             for (MicroFlo::PortId outPort=0; outPort < digitalPins+analogPins; outPort++) {
                 // Emit 0 for A0, 1 for A1, and so on
                 const long val = (outPort < digitalPins) ? outPort : outPort - digitalPins;
