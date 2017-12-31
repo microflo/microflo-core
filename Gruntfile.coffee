@@ -17,7 +17,7 @@ module.exports = ->
 
     exec:
         build_runtime: "make runtime"
-        fbpspec: "./node_modules/.bin/fbp-spec --address ws://localhost:3333 --command 'sh spec/start-runtime.sh' --start-timeout 10 spec/"
+        fbpspec: "./node_modules/.bin/fbp-spec --address ws://localhost:3333 --command 'sh spec/start-runtime.sh' --start-timeout 20 spec/"
 
   # Grunt plugins used for building
   @loadNpmTasks 'grunt-exec'
