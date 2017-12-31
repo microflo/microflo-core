@@ -33,7 +33,7 @@ public:
         } else if (port == InPorts::upper) {
             upper = in.asInteger();
         } else if (port == InPorts::in && in.isNumber()) {
-            const auto input = in.asInteger();
+            const long input = in.asInteger();
             send(Packet(this->_constrain(input)));
         }
     }
