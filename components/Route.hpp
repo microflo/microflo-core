@@ -3,7 +3,7 @@ name: Route
 description: "Pass packets to @out from input port number @port"
 inports:
   port:
-    type: all
+    type: integer
     description: ""
   in1:
     type: all

@@ -3,15 +3,15 @@ name: PwmWrite
 description: "Set duty cycle [0-100%] of PWM pin"
 inports:
   dutycycle:
-    type: all
+    type: integer
     description: ""
     triggering: true
   pin:
-    type: all
+    type: integer
     description: ""
 outports:
   out:
-    type: all
+    type: integer
     description: ""
 microflo_component */
 class PwmWrite : public SingleOutputComponent {

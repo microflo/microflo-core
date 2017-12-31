@@ -3,7 +3,7 @@ name: AnalogRead
 description: "Read analog value from pin. Value=[0-1023]"
 inports:
   trigger:
-    type: all
+    type: bang
     description: ""
   pin:
     type: integer

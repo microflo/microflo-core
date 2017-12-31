@@ -7,7 +7,7 @@ inports:
     description: ""
 outports:
   out:
-    type: all
+    type: bool
     description: ""
 microflo_component */
 /**

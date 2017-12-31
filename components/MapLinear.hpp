@@ -20,7 +20,7 @@ inports:
     description: ""
 outports:
   out:
-    type: all
+    type: integer
     description: ""
 microflo_component */
 class MapLinear : public SingleOutputComponent {

@@ -3,11 +3,11 @@ name: BoolToInt
 description: "Convert boolean input to integer. true->1, false->0"
 inports:
   in:
-    type: all
+    type: bool
     description: ""
 outports:
   out:
-    type: all
+    type: integer
     description: ""
 microflo_component */
 // Functor for PureFunctionComponent1

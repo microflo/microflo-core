@@ -4,15 +4,15 @@ description: "Emits true if @a AND @b is true, else false"
 inports:
   a:
     ctype: bool
-    type: all
+    type: boolean
     description: ""
   b:
     ctype: bool
-    type: all
+    type: boolean
     description: ""
 outports:
   out:
-    type: all
+    type: boolean
     description: ""
 type: pure2
 microflo_component */

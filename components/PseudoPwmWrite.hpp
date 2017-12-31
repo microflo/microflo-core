@@ -3,20 +3,20 @@ name: PseudoPwmWrite
 description: "Software PWM. Will be jittery and slow, but can be used on any GPIO pin/platform"
 inports:
   period:
-    type: all
+    type: integer
     description: ""
   ontime:
-    type: all
+    type: integer
     description: ""
   dutycycle:
-    type: all
+    type: integer
     description: ""
   pin:
-    type: all
+    type: integer
     description: ""
 outports:
   out:
-    type: all
+    type: boolean
     description: ""
 microflo_component */
 class PseudoPwmWrite : public SingleOutputComponent {

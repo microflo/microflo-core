@@ -3,11 +3,11 @@ name: InvertBoolean
 description: "Invert incoming boolean value. Logical equivalent: NOT"
 inports:
   in:
-    type: all
+    type: boolean
     description: ""
 outports:
   out:
-    type: all
+    type: boolean
     description: ""
 microflo_component */
 class InvertBoolean : public SingleOutputComponent {

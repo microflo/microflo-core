@@ -4,15 +4,15 @@ description: "Emits true if @a EQUALS @b is true, else false"
 inports:
   a:
     ctype: long
-    type: all
+    type: integer
     description: ""
   b:
     ctype: long
-    type: all
+    type: integer
     description: ""
 outports:
   out:
-    type: all
+    type: boolean
     description: ""
 type: pure2
 microflo_component */

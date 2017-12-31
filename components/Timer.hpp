@@ -11,7 +11,7 @@ inports:
     description: ""
 outports:
   out:
-    type: all
+    type: bang
     description: ""
     generating: true
 microflo_component */

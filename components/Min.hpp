@@ -4,15 +4,15 @@ description: "Emits minimum value of @in and @threshold"
 inports:
   in:
     ctype: long
-    type: all
+    type: integer
     description: ""
   threshold:
     ctype: long
-    type: all
+    type: integer
     description: ""
 outports:
   out:
-    type: all
+    type: integer
     description: ""
 type: pure2
 microflo_component */

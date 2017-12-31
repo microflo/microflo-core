@@ -12,7 +12,7 @@ inports:
     triggering: true
 outports:
   out:
-    type: all
+    type: boolean
     description: ""
 microflo_component */
 class ToggleBoolean : public SingleOutputComponent {

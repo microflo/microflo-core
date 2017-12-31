@@ -6,7 +6,7 @@ inports:
     type: all
     description: ""
   enable:
-    type: all
+    type: boolean
     description: ""
 outports:
   out:
