@@ -1,7 +1,7 @@
 
 # microflo-core
 
-## 0.6.0 - released N/A
+## 0.6.0 - released 31.12.2017
 
 Breaking changes
 
