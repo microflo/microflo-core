@@ -1,0 +1,44 @@
+topic: HoldPacket
+cases:
+-
+  name: 'without receiving data'
+  assertion: 'should send a NULL'
+  inputs:
+    in: true
+  expect:
+    out:
+      type: 'null'
+-
+  name: 'receiving an integer'
+  assertion: 'should send it when receiving bang'
+  inputs:
+    data: 42
+    in: true
+  expect:
+    out:
+      equals: 42
+-
+  name: 'receiving an integer'
+  assertion: 'should send it every time when receiving bang'
+  inputs:
+    -
+      data: 42
+      in: true
+    -
+      in: true
+  expect:
+    -
+      out:
+        equals: 42
+    -
+      out:
+        equals: 42
+-
+  name: 'receiving an boolean'
+  assertion: 'should send it when receiving bang'
+  inputs:
+    data: false
+    in: true
+  expect:
+    out:
+      equals: false
