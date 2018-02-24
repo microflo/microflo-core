@@ -21,6 +21,7 @@ static void rm_insertion_sort(int arr[], int length) {
 /* microflo_component yaml
 name: RunningMedian
 description: Calculate a running median of latest values
+icon: "bar-chart"
 inports:
   in:
     type: integer

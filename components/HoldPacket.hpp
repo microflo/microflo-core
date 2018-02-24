@@ -1,6 +1,7 @@
 /* microflo_component yaml
 name: HoldPacket
 description: Hold and send latest packet
+icon: "mail-forward"
 inports:
   data:
     type: all

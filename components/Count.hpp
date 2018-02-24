@@ -1,6 +1,7 @@
 /* microflo_component yaml
 name: Count
 description: "Count upwards from 0, with step 1"
+icon: "sort-numeric-asc"
 inports:
   in:
     type: bang
