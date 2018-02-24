@@ -1,6 +1,7 @@
 /* microflo_component yaml
 name: Split
 description: Emit incoming packets on all output ports
+icon: "expand"
 inports:
   in:
     type: all

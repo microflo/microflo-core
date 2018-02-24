@@ -1,6 +1,7 @@
 /* microflo_component yaml
 name: Route
 description: "Pass packets to @out from input port number @port"
+icon: "code-fork"
 inports:
   port:
     type: integer

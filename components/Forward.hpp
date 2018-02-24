@@ -1,6 +1,7 @@
 /* microflo_component yaml
 name: Forward
 description: Forward a packet from input to output
+icon: "forward"
 inports:
   in:
     type: all

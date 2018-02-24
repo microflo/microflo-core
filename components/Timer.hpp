@@ -1,6 +1,7 @@
 /* microflo_component yaml
 name: Timer
 description: "Emit a packet every @interval milliseconds"
+icon: "clock-o"
 inports:
   interval:
     type: integer

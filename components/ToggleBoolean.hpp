@@ -1,6 +1,7 @@
 /* microflo_component yaml
 name: ToggleBoolean
 description: Invert output packet everytime an input packet arrives. First output will be false
+icon: "check-square-o"
 inports:
   in:
     type: bang
