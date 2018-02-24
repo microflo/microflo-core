@@ -1,0 +1,84 @@
+topic: RunningMedian
+cases:
+-
+  name: 'sending bang when empty'
+  assertion: 'should give null out'
+  inputs:
+    - { in: null }
+  expect:
+    - { out: { type: 'null' } }
+-
+  name: 'sending 3 values'
+  assertion: 'should give median for each'
+  inputs:
+    - { in: 10 }
+    - { in: 30 }
+    - { in: 20 }
+  expect:
+    - { out: { equals: 10 } }
+    - { out: { equals: 20 } }
+    - { out: { equals: 20 } }
+-
+  name: 'then resetting'
+  assertion: 'should calculate only using new values'
+  inputs:
+    - { reset: null, in: null }
+    - { in: 600 }
+  expect:
+    - { out: { type: 'null' } }
+    - { out: { equals: 600 } }
+-
+  name: 'sending more than _MAX=11 values'
+  assertion: 'should give median for last N'
+  inputs:
+    - { reset: null, values: 999, in: null }
+    - { in: 200 }
+    - { in: 200 }
+    - { in: 340 }
+    - { in: 100 }
+    - { in: 340 }
+    - { in: 100 }
+    - { in: 340 }
+    - { in: 100 }
+    - { in: 340 }
+    - { in: 100 }
+    - { in: 340 }
+    - { in: 100 }
+    - { in: 340 }
+    - { in: 100 }
+    - { in: 340 }
+  expect:
+    - { out: { type: 'null' } }
+    - { out: { equals: 200 } }
+    - { out: { equals: 200 } }
+    - { out: { type: 'number' } }
+    - { out: { type: 'number' } }
+    - { out: { type: 'number' } }
+    - { out: { type: 'number' } }
+    - { out: { type: 'number' } }
+    - { out: { type: 'number' } }
+    - { out: { type: 'number' } }
+    - { out: { type: 'number' } }
+    - { out: { type: 'number' } }
+    - { out: { type: 'number' } }
+    - { out: { type: 'number' } }
+    - { out: { equals: 100 } }
+    - { out: { equals: 340 } }
+-
+  name: 'sending more than VALUES'
+  assertion: 'should give median for last N=VALUES'
+  inputs:
+    - { reset: null, values: 3, in: null }
+    - { in: 200 }
+    - { in: 100 }
+    - { in: 360 }
+    - { in: 100 }
+    - { in: 360 }
+  expect:
+    - { out: { type: 'null' } }
+    - { out: { equals: 200 } }
+    - { out: { equals: 150 } }
+    - { out: { equals: 200 } }
+    - { out: { equals: 100 } }
+    - { out: { equals: 360 } }
+
