@@ -1,6 +1,6 @@
 {
   "name": "microflo-core",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "Core components for MicroFlo",
   "keywords": [
     "microflo",
@@ -15,7 +15,8 @@
   "homepage": "http://microflo.org",
   "license": "MIT",
   "files": [
-    "components"
+    "components",
+    "spec"
   ],
   "engines": {
     "node": ">=0.10.0"
